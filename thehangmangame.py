@@ -31,6 +31,7 @@ print('\n\t', end='')
 print(*hiddenWord, end='')
 print('\t')
 print('\n\nAnd you have '+ str(lifeTotal) + ' hitpoints left to play. GLHF!' )
+
 #the game begins
 while( winningStatus == False and lifeTotal > 0):
     #input of a letter
@@ -41,7 +42,7 @@ while( winningStatus == False and lifeTotal > 0):
             print('That was not a valid word, fella.')
         else:
             inputLetter = inputLetter.upper()
-    #find'em
+    #find'em, every one of them
     if secretWord.find(inputLetter) != -1:
         aux = 1
         for c in secretWord:
@@ -54,17 +55,18 @@ while( winningStatus == False and lifeTotal > 0):
         print(*hiddenWord, end='')
         print('\n\n')
         #checks if game is over
-        if hiddenWord.find('_')!=-1:
+        if hiddenWord.find('_')!=-1:#if no underscore, means we solved and won the game
             winningStatus = False
         else:
             winningStatus = True
     else:#failed to find
         lifeTotal = lifeTotal-1
         print('\nDing Dong your letter is wrong.\n')
-        print('Hitpoints left:'+str(lifeTotal)+'\n')
+        print('Hitpoints left: '+str(lifeTotal)+'\n')
         print(gallow[lifeTotal])#this prints the hanged man with a very ugly array we declared above
+        print('\n')
     inputLetter = ' '#reset input so it asks again
 if winningStatus:
     print('\n\n\n-------------------YOU WIN-------------------\n\n\nYou got '+ str(lifeTotal)+ ' spare lives. GGWP!!\n')#winning msg
 else:
-    print('\n\n\n-------------------GAME OVER-------------------\n\n\nAny last words?')#loser msg
+    print('\n\n\n-------------------GAME OVER-------------------\n\n\nAny last words?\n')#loser msg
