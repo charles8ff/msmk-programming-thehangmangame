@@ -3,9 +3,9 @@ secretWord = ' ' # word we hide and try to guess
 hiddenWord = ' ' # same as secretWord but will be shown as '_ _ _ _ _'
 lifeTotal = 7 # this will be used to print parts of the gallow
 gallow = [
-' |\n O\n/|\\\n/ \\\n',
-' |\n O\n/|\\\n/ \n',
-' |\n O\n/|\\\n \n',
+' |\n O\n/|\ \n/ \ \n',
+' |\n O\n/|\ \n/ \n',
+' |\n O\n/|\ \n \n',
 ' |\n O\n/ \ \n \n',
 ' |\n O\n/  \n  \n',
 ' |\n O\n   \n  \n',
